@@ -1,0 +1,181 @@
+
+\hypertarget{thudown}{%
+\chapter{THUDown}\label{thudown}}
+
+Scroll down for the English version of README.
+
+本文是R语言软件包\texttt{THUDown}的使用手册，从架构、安装方法和使用方法三个方面对\texttt{THUDown}进行了介绍。\footnote{此文撰写的得到了清华大学赵赫和成功两位同学的支持，其中赵赫对``使用方法''章节的内容提供了主要的支持，成功同学对``安装方法''章节提供了支持。}
+
+\texttt{THUDown}是\texttt{Tsinghua\ University}和\texttt{markdown}的缩写，它是一个基于
+\LaTeX 和
+Quarto开发的清华大学学位论文Quarto模板，包括本科综合论文训练、硕士论文、博士论文以及博士后出站报告。它旨在让用户能够使用语法简单的类markdown文档（Quarto）来实现调用
+\LaTeX 进行复杂的文件编译。\texttt{THUDown}亦被封装在\href{https://sammo3182.github.io/software/drhutools/}{\texttt{drhutools}}软件包中，用户可借助\texttt{drhutools::THUDown()}进行下载使用。
+
+\textbf{需要特别强调的是}，本软件包是基于\href{https://github.com/tuna/thuthesis}{ThuThesis}开发的Quarto版本，因此其亦可被视作其拓展包。
+\texttt{THUDown}的\textbf{主要}
+\LaTeX 代码来自于\textbf{ThuThesis}宏包开发者的贡献，\texttt{THUDown}在\href{https://www.latex-project.org/lppl/lppl-1-3c/}{LaTeX项目公共许可证
+v1.3c}的授权使用范围内使用\textbf{ThuThesis}宏包的内容。
+
+请在\href{https://www.latex-project.org/lppl/lppl-1-3c/}{LaTeX项目公共许可证
+v1.3c}的使用许可范围内使用\texttt{THUDown}。
+
+
+\hypertarget{ux4e0bux8f7d}{%
+\chapter{下载}\label{ux4e0bux8f7d}}
+
+\texttt{THUDown}是一个基于 \LaTeX 和
+Quarto开发的清华大学学位论文Quarto模板，因此其使用需要下载\texttt{THUDown}核心软件包，亦需要恰当安装
+\LaTeX 、Quarto和ThuThesis等支持项目
+
+\hypertarget{ux6838ux5fc3ux8f6fux4ef6ux5305}{%
+\section{核心软件包}\label{ux6838ux5fc3ux8f6fux4ef6ux5305}}
+
+本节提供了\textbf{开发版}和\textbf{发布版}下载路径。
+
+\begin{itemize}
+\item
+  开发版
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://github.com/syfyufei}{GitHub Releases}
+  \end{itemize}
+\item
+  发布版
+
+  \begin{itemize}
+  \item
+    \href{https://github.com/syfyufei/thudown}{GitHub Releases}
+  \item
+    \href{}{CRAN}
+  \item
+    \href{https://sammo3182.github.io/software/drhutools/}{\texttt{drhutools}}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux652fux6301ux9879ux76ee}{%
+\section{支持项目}\label{ux652fux6301ux9879ux76ee}}
+
+\hypertarget{ux53d1ux884cux7248}{%
+\subsection{\texorpdfstring{\LaTeX 发行版}{发行版}}\label{ux53d1ux884cux7248}}
+
+本文提供两种不同的 \LaTeX 发行版选项，用户可以根据自身需求选择安装
+
+\begin{itemize}
+\item
+  \textbf{\texttt{TinyTeX}}。TinyTeX是一个瘦身版的TeX
+  Live，用户可以参考其主页的\href{https://yihui.org/tinytex/}{支持文档}自行安装。需要强调的是，因为\texttt{THUDown}和ThuThesis中包含大量宏包的调用，因此安装\texttt{TinyTeX}的用户在享受其便捷的同时，亦需要在安装第三方宏包上伤脑筋，尤其是无法通过\texttt{tlmgr}安装的宏包。对于这些包，请参见\href{https://github.com/rstudio/tinytex/issues/126\#issuecomment-503020154}{此issue}
+\item
+  \textbf{\texttt{TexLive}}。用户亦可通过\href{https://tug.org/texlive/}{Texlive主页}安装完整版的\texttt{TexLive}。
+\end{itemize}
+
+\hypertarget{quarto}{%
+\subsection{Quarto}\label{quarto}}
+
+Quarto是一套开源的科技出版系统。
+它使得用户能够使用Jupyter、Python、R、Julia和Observable创作HTML、PDF、MS
+Word、ePub等格式的可复制、高质量的文章、演示文稿、网站、博客和书籍。
+Quarto是\texttt{THUDown}必须项，请参考\href{https://quarto.org/docs/get-started/}{Quarto支持页面}进行安装。
+
+\hypertarget{thuthesis}{%
+\subsection{ThuThesis}\label{thuthesis}}
+
+\href{https://github.com/tuna/thuthesis}{ThuThesis}一个简单易用的清华大学学位论文
+LaTeX 模板，\texttt{THUDown}的主体
+\LaTeX 代码来自ThuThesis。请参考\href{https://github.com/tuna/thuthesis\#readme}{ThuThesis的Github项目主页}进行安装。
+
+
+\hypertarget{ux4f7fux7528ux8bf4ux660e}{%
+\chapter{使用说明}\label{ux4f7fux7528ux8bf4ux660e}}
+
+\hypertarget{ux6b63ux6587ux90e8ux5206}{%
+\section{正文部分}\label{ux6b63ux6587ux90e8ux5206}}
+
+\hypertarget{setup-chunk}{%
+\subsection{Setup Chunk}\label{setup-chunk}}
+
+
+\hypertarget{ux8868ux683c}{%
+\chapter{表格}\label{ux8868ux683c}}
+
+\hypertarget{tbl-design}{}
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{0pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{1.47in}|p{0.78in}|p{1.10in}|p{0.84in}}
+
+\caption{\label{tbl-design}Factorial Design of the Experiment } \\ 
+
+
+\ascline{1.5pt}{666666}{1-4}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.47in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Social\ Impetus}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.78in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Control}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Collectivism}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.84in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Altruism}}} \\
+
+\ascline{1.5pt}{666666}{1-4}\endhead
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.47in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{No\ peer\ pressure}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.78in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{N}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{C}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.84in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{A}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.47in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Peer\ pressure}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.78in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{P}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{CP}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.84in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{AP}}} \\
+
+\ascline{1.5pt}{666666}{1-4}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
+
+\hypertarget{ux4ee3ux7801ux5757}{%
+\subsection{代码块}\label{ux4ee3ux7801ux5757}}
+
+\begin{verbatim}
+[1] 2
+\end{verbatim}
+
+\hypertarget{ux63d2ux56fe}{%
+\subsection{插图}\label{ux63d2ux56fe}}
+
+https://quarto.org/docs/authoring/figures.html
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth,height=0.3\textheight]{ProgressPrideFlag.png}
+
+}
+
+\caption{示例图片}
+
+\end{figure}
+
+\hypertarget{ux5f15ux6587}{%
+\subsection{引文}\label{ux5f15ux6587}}
+
+\citet{AmorimLopesAlves2020}
+
+\citep{AmorimLopesAlves2020}
+
+
