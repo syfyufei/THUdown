@@ -1,0 +1,30 @@
+\contentsline {chapter}{摘\hskip 1em\relax 要}{I}{section*.9}%
+\contentsline {chapter}{Abstract}{II}{section*.11}%
+\contentsline {chapter}{目\hskip 1em\relax 录}{III}{section*.13}%
+\contentsline {chapter}{插图清单}{V}{section*.15}%
+\contentsline {chapter}{附表清单}{VI}{section*.17}%
+\contentsline {chapter}{符号和缩略语说明}{VII}{section*.19}%
+\contentsline {chapter}{\numberline {第1章}THUDown}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {第2章}下载}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}核心软件包}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}支持项目}{2}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}\LaTeX 发行版}{2}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Quarto}{2}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}ThuThesis}{3}{subsection.2.2.3}%
+\contentsline {chapter}{\numberline {第3章}使用说明}{4}{chapter.3}%
+\contentsline {section}{\numberline {3.1}正文部分}{4}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Setup Chunk}{4}{subsection.3.1.1}%
+\contentsline {chapter}{\numberline {第4章}表格}{5}{chapter.4}%
+\contentsline {subsection}{\numberline {4.0.1}代码块}{5}{subsection.4.0.1}%
+\contentsline {subsection}{\numberline {4.0.2}插图}{5}{subsection.4.0.2}%
+\contentsline {subsection}{\numberline {4.0.3}引文}{5}{subsection.4.0.3}%
+\setcounter {tocdepth}{0}
+\contentsline {chapter}{参考文献}{6}{section*.22}%
+\setcounter {tocdepth}{0}
+\contentsline {chapter}{\numberline {附录 A}补充内容}{7}{appendix.A}%
+\contentsline {chapter}{致\hskip 1em\relax 谢}{8}{section*.24}%
+\contentsline {chapter}{声\hspace {1em}明}{9}{section*.26}%
+\contentsline {chapter}{个人简历、在学期间完成的相关学术成果}{10}{section*.28}%
+\contentsline {chapter}{指导教师评语}{11}{appendix*.34}%
+\contentsline {chapter}{答辩委员会决议书}{12}{appendix*.35}%
+\contentsfinish 
