@@ -17,13 +17,13 @@ Scroll down for the English version of README.
 
 - 开发版
 
-- [GitHub Releases](https://github.com/syfyufei)
+  - [GitHub Releases](https://github.com/syfyufei)
 
 - 发布版
 
-- [CRAN]()
+  - [CRAN]()
 
-- [`drhutools`](https://sammo3182.github.io/software/drhutools/)
+  - [`drhutools`](https://sammo3182.github.io/software/drhutools/)
 
 ## 支持项目
 
