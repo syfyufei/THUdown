@@ -1,6 +1,6 @@
 
-\hypertarget{thudown}{%
-\chapter{THUDown}\label{thudown}}
+\hypertarget{ux5f15ux8a00}{%
+\chapter{引言}\label{ux5f15ux8a00}}
 
 Scroll down for the English version of README.
 
@@ -18,6 +18,32 @@ v1.3c}的授权使用范围内使用\textbf{ThuThesis}宏包的内容。
 
 请在\href{https://www.latex-project.org/lppl/lppl-1-3c/}{LaTeX项目公共许可证
 v1.3c}的使用许可范围内使用\texttt{THUDown}。
+
+\hypertarget{ux67b6ux6784}{%
+\section{架构}\label{ux67b6ux6784}}
+
+\texttt{THUdown}
+的编译框架采用了一个分层和集成的方法来生成学术文档。其核心编译流程可以概括为以下几个阶段：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{内容创建与转换}: 初始内容以 Quarto
+  文件格式撰写。这种格式主要针对文本的表示和结构化，使其便于编辑和版本控制。
+\item
+  \textbf{中间表示}: 利用 \texttt{pandoc} 这一强大的文档转换工具，Quarto
+  文件被转化为 \LaTeX 格式。在这一阶段，文本和元数据被转化为
+  \LaTeX 指令和环境，为下一步套用模板做准备。
+\item
+  \textbf{模板应用}: 转换得到的 \LaTeX 文件被整合到 \texttt{ThuThesis}
+  模板中。\texttt{ThuThesis} 是为清华大学学术论文设计的
+  \LaTeX 模板，能确保文档满足清华大学的格式要求。
+\item
+  \textbf{文档编译}: 最后，通过使用 \texttt{make} 命令（该命令引导
+  \LaTeX 编译器），将 \LaTeX 文件编译成为最终的 PDF 格式的学术文档。
+\end{enumerate}
+
+这一架构确保了从内容创建到最终文档输出的整个过程都是高度自动化的，同时也保证了文档质量和格式的一致性。
 
 
 \hypertarget{ux4e0bux8f7d}{%
@@ -45,8 +71,6 @@ Quarto开发的清华大学学位论文Quarto模板，因此其使用需要下�
   发布版
 
   \begin{itemize}
-  \item
-    \href{https://github.com/syfyufei/thudown}{GitHub Releases}
   \item
     \href{}{CRAN}
   \item
@@ -89,93 +113,88 @@ LaTeX 模板，\texttt{THUDown}的主体
 \hypertarget{ux4f7fux7528ux8bf4ux660e}{%
 \chapter{使用说明}\label{ux4f7fux7528ux8bf4ux660e}}
 
-\hypertarget{ux6b63ux6587ux90e8ux5206}{%
-\section{正文部分}\label{ux6b63ux6587ux90e8ux5206}}
+本章将从编辑和编译两个部分对\texttt{THUdown}的使用方法进行详细的说明。
 
-\hypertarget{setup-chunk}{%
-\subsection{Setup Chunk}\label{setup-chunk}}
+\hypertarget{ux7f16ux8f91}{%
+\section{编辑}\label{ux7f16ux8f91}}
 
+\hypertarget{ux4e3bux4f53ux67b6ux6784}{%
+\subsection{主体架构}\label{ux4e3bux4f53ux67b6ux6784}}
 
-\hypertarget{ux8868ux683c}{%
-\chapter{表格}\label{ux8868ux683c}}
+├── abstract.tex
 
-\hypertarget{tbl-design}{}
-\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+├── acknowledgements.tex
 
-\global\setlength{\Oldtabcolsep}{\tabcolsep}
+├── appendix-survey.tex
 
-\setlength{\tabcolsep}{0pt}
+├── appendix-translation.tex
 
-\renewcommand*{\arraystretch}{1.5}
+├── appendix.tex
 
+├── comments.tex
 
+├── committee.tex
 
-\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+├── denotation.tex
 
-\begin{longtable}[c]{|p{1.47in}|p{0.78in}|p{1.10in}|p{0.84in}}
+├── main.tex
 
-\caption{\label{tbl-design}Factorial Design of the Experiment } \\ 
+├── /quarto\_file
 
+├── resolution.tex
 
-\ascline{1.5pt}{666666}{1-4}
+└── resume.tex
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.47in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Social\ Impetus}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.78in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Control}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Collectivism}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.84in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Altruism}}} \\
+\hypertarget{ux5bf9quarto.qmdux6587ux6863ux7684ux7f16ux8f91}{%
+\subsection{对Quarto(.qmd)文档的编辑}\label{ux5bf9quarto.qmdux6587ux6863ux7684ux7f16ux8f91}}
 
-\ascline{1.5pt}{666666}{1-4}\endhead
+data/quarto\_file文件夹
 
+正文部分
 
+具体功能的使用
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.47in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{No\ peer\ pressure}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.78in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{N}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{C}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.84in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{A}}} \\
+附录部分
 
+\hypertarget{ux5bf9latex.texux6587ux6863ux7684ux7f16ux8f91}{%
+\subsection{对Latex(.tex)文档的编辑}\label{ux5bf9latex.texux6587ux6863ux7684ux7f16ux8f91}}
 
+data文件夹中的其他文件
 
+\hypertarget{ux7f16ux8bd1}{%
+\section{编译}\label{ux7f16ux8bd1}}
 
+\hypertarget{ux7f16ux8bd1ux65b9ux6cd5}{%
+\subsection{编译方法}\label{ux7f16ux8bd1ux65b9ux6cd5}}
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.47in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Peer\ pressure}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.78in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{P}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{CP}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.84in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{AP}}} \\
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  确保你的系统已经安装了\texttt{zsh}，\texttt{quarto}，\texttt{awk}，和\texttt{make}这些工具。
+\item
+  打开终端，导航（\texttt{cd}）到\texttt{knit.sh}文件所在的目录，即\texttt{THUdown}的根目录。
+\item
+  运行以下命令使\texttt{knit.sh}文件变为可执行：
+\end{enumerate}
 
-\ascline{1.5pt}{666666}{1-4}
+\texttt{\{bash\ eval=FALSE,\ include=FALSE\}\ chmod\ +x\ knit.sh}
 
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  执行脚本来编译你的\texttt{THUdown}包：
+\end{enumerate}
 
+\texttt{\{bash\ eval=FALSE,\ include=FALSE\}\ ./knit.sh}
 
-\end{longtable}
-
-
-
-\arrayrulecolor[HTML]{000000}
-
-\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
-
-\global\setlength{\tabcolsep}{\Oldtabcolsep}
-
-\renewcommand*{\arraystretch}{1}
-
-\hypertarget{ux4ee3ux7801ux5757}{%
-\subsection{代码块}\label{ux4ee3ux7801ux5757}}
-
-\begin{verbatim}
-[1] 2
-\end{verbatim}
-
-\hypertarget{ux63d2ux56fe}{%
-\subsection{插图}\label{ux63d2ux56fe}}
-
-https://quarto.org/docs/authoring/figures.html
-
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth,height=0.3\textheight]{ProgressPrideFlag.png}
-
-}
-
-\caption{示例图片}
-
-\end{figure}
-
-\hypertarget{ux5f15ux6587}{%
-\subsection{引文}\label{ux5f15ux6587}}
-
-\citet{AmorimLopesAlves2020}
-
-\citep{AmorimLopesAlves2020}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  脚本会按照上述的编译原理进行操作，并最终生成你的论文。
+\end{enumerate}
 
 
