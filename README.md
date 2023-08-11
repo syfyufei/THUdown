@@ -64,8 +64,7 @@ This section provides the download paths for both **development** and **release*
     
     * [GitHub Releases](https://github.com/syfyufei)
 * Release Version:
-    
-    * [GitHub Releases](https://github.com/syfyufei/thudown)
+
     * CRAN
     * [`drhutools`](https://sammo3182.github.io/software/drhutools/)
 
